@@ -1,0 +1,17 @@
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: https://gitlab.com/.well-known/openid-configuration
+      client:
+        registration:
+          gitlab:
+            clientId: foo
+            clientSecret: bar
+            scope: openid,profile
+        provider:
+          gitlab:
+            issuer-uri: https://gitlab.com
+            user-name-attribute: nickname
